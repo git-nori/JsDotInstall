@@ -5,12 +5,17 @@
     <meta charset="utf-8">
     <title>JavaScript Practice</title>
     <style>
+        body {
+            display: flex;  /* 要素を横並びにする */
+            flex-wrap: wrap;  /* 要素を折り返す */
+        }
         .box {
             width: 100px;
             height: 100px;
             background-color: skyblue;
             cursor: pointer;
             transition: 0.8s;  /* アニメーションにかける時間 */
+            margin: 0 8px;
         }
         .circle {
             background-color: pink;
@@ -22,20 +27,30 @@
 </head>
 
 <body>
-    <div class="box" id="target"></div>
+    <div class="box" id="target1"></div>
+    <div class="box" id="target2"></div>
+    <div class="box" id="target3"></div>
     <script>
         'use strict';
 
-        const target = document.getElementById('target');
+        const target1 = document.getElementById('target1');
+        const target2 = document.getElementById('target2');
+        const target3 = document.getElementById('target3');
 
         // document => 文章全体
         // getElementById => 引数に指定したidの要素を取得
         // addEventListener => 何かが起きたら何らかの処理をする
         // => =>アロー関数、関数内に処理を記述することができる
-        target.addEventListener('click', () => {
+        target1.addEventListener('click', () => {
             // document.getElementById('target').style.background = 'pink';
             // document.getElementById('target').style.borderRadius = '50%';
-            target.classList.toggle('circle');  // cssクラスの指定
+            target1.classList.toggle('circle');  // cssクラスの指定
+        });
+        target2.addEventListener('click', () => {
+            target2.classList.toggle('circle');  // cssクラスの指定
+        });
+        target3.addEventListener('click', () => {
+            target3.classList.toggle('circle');  // cssクラスの指定
         });
     </script>
 </body>
