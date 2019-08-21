@@ -15,7 +15,9 @@
             background-color: skyblue;
             cursor: pointer;
             transition: 0.8s;  /* アニメーションにかける時間 */
-            margin: 0 8px;
+            margin: 0 8px 8px 8px;
+            text-align: center;
+            line-height: 100px;
         }
         .circle {
             background-color: pink;
@@ -30,14 +32,17 @@
     <script>
         'use strict';
 
-        const div = document.createElement('div');  //要素の生成
-        
-        div.classList.add('box');
-        div.addEventListener('click', () => {
-            div.classList.toggle('circle');
-        });
+        for (let i = 0; i < 10; i++) {
+                const div = document.createElement('div');  //要素の生成
+            
+            div.classList.add('box');
+            div.textContent = i;  // divのテキストを設定
+            div.addEventListener('click', () => {
+                div.classList.toggle('circle');
+            });
 
-        document.body.appendChild(div);  // ボディの子要素として追加(ブラウザに表示)
+            document.body.appendChild(div);  // ボディの子要素として追加(ブラウザに表示)
+        }
     </script>
 </body>
 
